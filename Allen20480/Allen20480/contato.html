@@ -9,6 +9,12 @@
 
     <!-- Bootstrap core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .not-valid {
+
+        }
+
+    </style>
 </head>
 
 <body>
@@ -94,9 +100,15 @@
                     var $txtEmail = $("#txtEmail");
                     var $txtMensagem = $("#txtMensagem");
 
+                    var isValid = true;
+
+                    $txtNome.parent().find("label").remove();
+                    $txtEmail.parent().find("label").remove();
+                    $txtMensagem.parent().find("label").remove();
+
                     if ($txtNome.val() === "") {
-                        alert("Digite o nome");
-                        return;
+                        $($txtNome).parent().append("<label class='not-valid
+                        isValid = false;
                     }
                     if ($txtEmail.val() === "") {
                         alert("Digite o Email");
